@@ -1,16 +1,29 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+# This is a basic workflow to help you get started with Actions
+
+name: hoge_actions
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+jobs:
+  test-Action:
+    steps:
+      - name: first step
+        uses: docker://woodencaliper/hoge_image
+      - name: python
+        # run: drawio -V
+        run: python3 hello_hoge.py
+
+
+    # runs:
+    #   using: 'docker'
+    #   image: 'Dockerfile' # 実行するコンテナのDockerfile    # runs-on: windows-latest
