@@ -14,6 +14,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  runs:
-    using: 'docker'
-    image: 'Dockerfile' # 実行するコンテナのDockerfile
+  test-Action:
+    runs:
+      using: 'docker'
+      image: 'Dockerfile' # 実行するコンテナのDockerfile    # runs-on: windows-latest
+    steps:
+      - name: python
+        # run: drawio -V
+        run: python3 hello_hoge.py
