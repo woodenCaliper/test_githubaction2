@@ -13,6 +13,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-runs:
-  using: 'docker'
-  image: 'Dockerfile' # 実行するコンテナのDockerfile
+jobs:
+  runs:
+    using: 'docker'
+    image: 'Dockerfile' # 実行するコンテナのDockerfile
