@@ -1,0 +1,1 @@
+FROM woodencaliper/hoge_image
